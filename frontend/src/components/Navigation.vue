@@ -1,7 +1,11 @@
 <template>
+
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="logout"><a href="/api/account/sign_out">Logout</a></el-menu-item>
-        <el-menu-item v-for="item in availablePages" :index="item">{{ item | capitalize }}</el-menu-item>
+    <el-menu-item class="flow-left">
+        <a href="#"><img src="../assets/logo.png" width="70px" height="70px" alt="HRM Logo" class="img-fluid logo"></a>
+    </el-menu-item>
+        <el-menu-item class="flow-right" index="logout"><a href="/api/account/sign_out">Logout</a></el-menu-item>
+        <el-menu-item class="flow-left" v-for="item in availablePages" :index="item" :key="item.id">{{ item | capitalize }}</el-menu-item>
     </el-menu>
 </template>
 
@@ -47,7 +51,10 @@
 </script>
 
 <style>
-    .el-menu-item {
+    .flow-right {
         float: right !important;
+    }
+    .flow-left {
+        float: left !important;
     }
 </style>
