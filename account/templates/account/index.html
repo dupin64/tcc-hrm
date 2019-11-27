@@ -121,6 +121,9 @@
 </head>
 <body class="align">
     <div class="grid">
+        <div>
+                <a href="#"><img src="{% load static %} {% static "logo.png" %}" alt="HRM Logo" class="img-fluid logo"></a>
+        </div>
         <form action="/api/account/sign_in" method="POST" class="form" id="login-form">
             {% csrf_token %}
             <div class="form_field" id="login-error">
